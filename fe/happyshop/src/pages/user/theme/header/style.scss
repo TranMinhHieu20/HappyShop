@@ -7,7 +7,7 @@
 
 .header__top_left {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   padding: 10px 0 13px;
 
@@ -41,7 +41,7 @@
 
 .header__top_right {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   padding: 10px 0 13px;
 
@@ -59,6 +59,8 @@
     li:last-child {
       margin-left: 10px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
 
       span {
         font-size: 14px;
