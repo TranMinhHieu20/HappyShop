@@ -4,11 +4,6 @@ import { BsFacebook } from 'react-icons/bs'
 import { BsInstagram } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsGlobe2 } from 'react-icons/bs'
-import { AiOutlineLogin } from 'react-icons/ai'
-import { AiTwotoneMail } from 'react-icons/ai'
-import { formatter } from 'utils/formatter'
-import { BsCart3 } from 'react-icons/bs'
-import { ROUTERS } from 'utils/router'
 
 import './style.scss'
 
@@ -18,7 +13,7 @@ const Footer = () => {
       <footer className="footer">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-6 col-sm-6 col-sx-12">
               <div className="footer__about">
                 <h1 className="footer__about__logo">HappyShop</h1>
                 <ul>
@@ -28,7 +23,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-sx-12">
               <div className="footer__widget">
                 <h6>Cửa hàng</h6>
                 <ul>
@@ -55,12 +50,12 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-12 col-sm-12 col-sx-12">
               <div className="footer__widget">
                 <h6>Khuyến mại & ưu đãi</h6>
                 <p>Đăng ký nhận thông tin tại đây</p>
                 <form action="#">
-                  <div>
+                  <div className="input-group">
                     <input type="text" placeholder="Nhập email"></input>
                     <button type="submit" className="button-submit">
                       Submit
