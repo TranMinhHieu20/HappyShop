@@ -1,10 +1,10 @@
-import { memo, useState } from 'react'
+import { memo, useState, useRef, useEffect } from 'react'
 import './style.scss'
 import { BsFacebook } from 'react-icons/bs'
 import { BsInstagram } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsGlobe2 } from 'react-icons/bs'
-import { AiOutlineLogin } from 'react-icons/ai'
+import { AiOutlineLogin, AiOutlineMenu } from 'react-icons/ai'
 import { AiTwotoneMail } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { formatter } from 'utils/formatter'
@@ -12,6 +12,8 @@ import { BsCart3 } from 'react-icons/bs'
 import { ROUTERS } from 'utils/router'
 
 const Header = () => {
+  const [isShowCateGories, setIsShowCateGories] = useState(false)
+  const categoriesRef = useRef(null)
   //eslint-disable-next-line
   const [menus, setMenus] = useState([
     { name: 'Trang chủ', path: ROUTERS.USER.HOME },
@@ -38,6 +40,25 @@ const Header = () => {
     { name: 'Bài viết', path: '' },
     { name: 'Liên hệ', path: '' }
   ])
+
+  // Ẩn khi click ra ngoài
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (categoriesRef.current && !categoriesRef.current.contains(event.target)) {
+        setIsShowCateGories(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  const handleShowCateGories = () => {
+    setIsShowCateGories(!isShowCateGories)
+  }
 
   return (
     <>
@@ -128,6 +149,38 @@ const Header = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row hero__categories_container">
+          <div className="col-lg-3 hero__categories" ref={categoriesRef}>
+            <div className="hero__categories__all" onClick={handleShowCateGories}>
+              <AiOutlineMenu />
+              Danh sách sản phẩm
+            </div>
+            {isShowCateGories && (
+              <>
+                <ul className={!isShowCateGories ? '' : 'hidden'}>
+                  <li>
+                    <Link to="#">Thịt tươi</Link>
+                  </li>
+                  <li>
+                    <Link to="#">Rau củ</Link>
+                  </li>
+                  <li>
+                    <Link to="#">Nước trái cây</Link>
+                  </li>
+                  <li>
+                    <Link to="#">Trái cây</Link>
+                  </li>
+                  <li>
+                    <Link to="#">Hải sản</Link>
+                  </li>
+                </ul>
+              </>
+            )}
+          </div>
+          <div className="col-lg-9">Phai</div>
         </div>
       </div>
     </>
