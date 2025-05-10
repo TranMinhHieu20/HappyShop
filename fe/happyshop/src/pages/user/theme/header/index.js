@@ -4,7 +4,7 @@ import { BsFacebook } from 'react-icons/bs'
 import { BsInstagram } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsGlobe2 } from 'react-icons/bs'
-import { AiOutlineLogin, AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineLogin, AiOutlineMenu, AiOutlinePhone } from 'react-icons/ai'
 import { AiTwotoneMail } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { formatter } from 'utils/formatter'
@@ -180,7 +180,40 @@ const Header = () => {
               </>
             )}
           </div>
-          <div className="col-lg-9">Phai</div>
+          <div className="col-lg-9 hero__search_container">
+            <div className="hero__search">
+              <div className="hero__search__form">
+                <form>
+                  <input type="text" name="" value="" placeholder="Bạn đang tìm gì?"></input>
+                  <button type="submit">Tìm kiếm</button>
+                </form>
+              </div>
+              <div className="hero__search__phone">
+                <div className="hero__search__phone__icon">
+                  <AiOutlinePhone />
+                </div>
+                <div className="hero__search__phone__text">
+                  <p>0123-456-789</p>
+                  <span>Hỗ trợ 24/7</span>
+                </div>
+              </div>
+            </div>
+            <div className="hero__item">
+              <div className="hero__text">
+                <br />
+                <span>Trái cây tươi</span>
+                <h2>
+                  Rau quả
+                  <br />
+                  sạch 100%
+                </h2>
+                <p>Miễn phí giao hàng tận nơi</p>
+                <Link to="#" className="primary-btn">
+                  Mua ngay
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
