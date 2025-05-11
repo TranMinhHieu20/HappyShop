@@ -309,7 +309,7 @@ $bannerImg: '/assets/user/images/hero/banner1.jpg';
       background-image: url($bannerImg);
       background-repeat: no-repeat;
       background-size: cover;
-      width: 100%;
+      // width: 100%;
       height: 410px;
       align-items: center;
       margin-top: 30px;
@@ -351,8 +351,6 @@ $bannerImg: '/assets/user/images/hero/banner1.jpg';
           text-decoration: none;
           letter-spacing: 2px;
         }
-      }
-      .primary-btn {
       }
     }
   }

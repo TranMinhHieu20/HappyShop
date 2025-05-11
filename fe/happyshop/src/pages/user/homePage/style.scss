@@ -1,0 +1,20 @@
+.container__categories_slider {
+  max-width: 1200px;
+  margin-top: 30px;
+
+  .categories_slider {
+    .categories_slider_item {
+      height: 300px;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .react-multi-carousel-item:not(:first-child):not(:last-child) {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}
