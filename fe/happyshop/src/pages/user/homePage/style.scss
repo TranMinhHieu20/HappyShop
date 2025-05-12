@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'style/pages/theme' as *;
+
 .container__categories_slider {
   max-width: 1200px;
   margin-top: 30px;
@@ -15,6 +18,48 @@
     .react-multi-carousel-item:not(:first-child):not(:last-child) {
       margin-left: 5px;
       margin-right: 5px;
+    }
+  }
+}
+
+.featured {
+  margin-top: 50px;
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h2 {
+      position: relative;
+    }
+
+    h2:after {
+      position: absolute;
+      content: '';
+      right: 0;
+      left: 0;
+      bottom: -15px;
+      width: 80px;
+      height: 4px;
+      background: map-get($theme-color, $key: 'main');
+      margin: 0 auto;
+    }
+  }
+  .react-tabs {
+    ul {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+
+      li {
+        list-style: none;
+        font-size: 18px;
+        color: map-get($map: $theme-color, $key: 'normal-text');
+        display: inline-block;
+        // margin-right: 10px;
+        position: relative;
+        cursor: pointer;
+      }
     }
   }
 }
