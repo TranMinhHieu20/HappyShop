@@ -10,6 +10,9 @@ import cat4 from '../../../assets/user/images/categories/cat4.jpg'
 import thitbo from '../../../assets/user/images/feature/thitbo.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
+import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
+import { formatter } from 'utils/formatter'
 
 const HomePage = () => {
   const responsive = {
@@ -52,18 +55,93 @@ const HomePage = () => {
         },
         {
           img: thitbo,
+          name: 'Ổi',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Dưa hấu',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Nho tím',
+          price: 17000
+        },
+        {
+          img: thitbo,
           name: 'Chuối',
-          price: 20000
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Hamburger',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Xoài kem',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Táo',
+          price: 17000
         }
       ]
     },
-    fesh: {
+    freshMeat: {
       title: 'Thịt tươi',
       products: [
         {
           img: thitbo,
           name: 'Thịt tươi',
           price: 20000
+        }
+      ]
+    },
+    fruits: {
+      title: 'Trái cây tươi',
+      products: [
+        {
+          img: thitbo,
+          name: 'Ổi',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Dưa hấu',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Nho tím',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Chuối',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Táo',
+          price: 17000
+        },
+        {
+          img: thitbo,
+          name: 'Xoài kem',
+          price: 17000
+        }
+      ]
+    },
+    fastFood: {
+      title: 'Thức ăn nhanh',
+      products: [
+        {
+          img: thitbo,
+          name: 'Hamburger',
+          price: 17000
         }
       ]
     }
@@ -78,7 +156,26 @@ const HomePage = () => {
       data[key].products.forEach((item, key) => {
         tabPanel.push(
           <>
-            <div key={key}>{item.name}</div>
+            <div className="col-lg-3" key={key}>
+              <div className="featured__item">
+                <div className="featured__item__pic" style={{ backgroundImage: `url(${item.img})` }}>
+                  <ul className="featured__item__pic__hover">
+                    <li>
+                      <AiOutlineEye />
+                    </li>
+                    <li>
+                      <AiOutlineShoppingCart />
+                    </li>
+                  </ul>
+                </div>
+                <div className="featured__item__text">
+                  <h6>
+                    <Link to="">{item.name}</Link>
+                  </h6>
+                  <h5>{formatter(item.price)}</h5>
+                </div>
+              </div>
+            </div>
           </>
         )
       })
@@ -118,6 +215,18 @@ const HomePage = () => {
         </div>
       </div>
       {/* Featured End */}
+      {/* Banner Begin */}
+      <div className="container">
+        <div className="banner">
+          <div className="banner__pic">
+            <img src={thitbo} alt="banner" />
+          </div>
+          <div className="banner__pic">
+            <img src={thitbo} alt="banner" />
+          </div>
+        </div>
+      </div>
+      {/* Banner End */}
     </>
   )
 }
