@@ -4,7 +4,17 @@ import { BsFacebook } from 'react-icons/bs'
 import { BsInstagram } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsGlobe2 } from 'react-icons/bs'
-import { AiOutlineLogin, AiOutlineMenu, AiOutlinePhone, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai'
+import {
+  AiOutlineFacebook,
+  AiOutlineGlobal,
+  AiOutlineInstagram,
+  AiOutlineLinkedin,
+  AiOutlineLogin,
+  AiOutlineMenu,
+  AiOutlinePhone,
+  AiOutlineShoppingCart,
+  AiOutlineUser
+} from 'react-icons/ai'
 import { AiTwotoneMail } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { formatter } from 'utils/formatter'
@@ -13,6 +23,7 @@ import { ROUTERS } from 'utils/router'
 
 const Header = () => {
   const [isShowCateGories, setIsShowCateGories] = useState(false)
+  const [isShowHumberger, setIsShowHumberger] = useState(false)
   const categoriesRef = useRef(null)
   //eslint-disable-next-line
   const [menus, setMenus] = useState([
@@ -62,7 +73,11 @@ const Header = () => {
 
   return (
     <>
-      <div className="humberger__menu__wrapper">
+      <div
+        className={`humberger__menu__overlay ${isShowHumberger ? 'active' : ''}`}
+        onClick={() => setIsShowHumberger(false)}
+      ></div>
+      <div className={`humberger__menu__wrapper ${isShowHumberger ? 'show' : ''}`}>
         <div className="header__logo">
           <h1>HappyShop</h1>
         </div>
@@ -90,7 +105,30 @@ const Header = () => {
         </div>
         <div className="humberger__menu__nav">
           <ul>
-            <li></li>
+            <li>Menu Item</li>
+          </ul>
+        </div>
+        <div className="header__top__right__social">
+          <Link to={''}>
+            <AiOutlineFacebook />
+          </Link>
+          <Link to={''}>
+            <AiOutlineInstagram />
+          </Link>
+          <Link to={''}>
+            <AiOutlineLinkedin />
+          </Link>
+          <Link to={''}>
+            <AiOutlineGlobal />
+          </Link>
+        </div>
+        <div className="humberger__menu__contact">
+          <ul>
+            <li>
+              <i className="fa fa-envelope" />
+              tranhieu200304@gmail.com
+            </li>
+            <li>Miễn phí giao hàng từ đơn {formatter(200000)} trở lên</li>
           </ul>
         </div>
       </div>
@@ -185,7 +223,7 @@ const Header = () => {
               <AiOutlineMenu
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
-                  alert('ok')
+                  setIsShowHumberger(true)
                 }}
               />
             </div>
