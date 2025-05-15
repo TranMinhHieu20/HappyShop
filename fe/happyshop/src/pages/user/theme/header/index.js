@@ -4,7 +4,7 @@ import { BsFacebook } from 'react-icons/bs'
 import { BsInstagram } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsGlobe2 } from 'react-icons/bs'
-import { AiOutlineLogin, AiOutlineMenu, AiOutlinePhone } from 'react-icons/ai'
+import { AiOutlineLogin, AiOutlineMenu, AiOutlinePhone, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai'
 import { AiTwotoneMail } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { formatter } from 'utils/formatter'
@@ -62,6 +62,39 @@ const Header = () => {
 
   return (
     <>
+      <div className="humberger__menu__wrapper">
+        <div className="header__logo">
+          <h1>HappyShop</h1>
+        </div>
+        <div className="humberger__menu__cart">
+          <ul>
+            <li>
+              <Link to={''}>
+                <AiOutlineShoppingCart />
+                <span>1</span>
+              </Link>
+            </li>
+          </ul>
+          <div className="header__cart__price">
+            Giỏ hàng: <span>{formatter(123123132)}</span>
+          </div>
+        </div>
+        <div className="humberger__menu__widget">
+          <div className="header__top__widget">
+            {' '}
+            <Link to={''}>
+              <AiOutlineUser />
+              <span>Đăng nhập</span>
+            </Link>
+          </div>
+        </div>
+        <div className="humberger__menu__nav">
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      {/*  */}
       <div className="header_top">
         <div className="container">
           <div className="row">
@@ -109,12 +142,12 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-xl-3">
+          <div className="col-lg-3">
             <div className="header__logo">
               <h1>HappyShop</h1>
             </div>
           </div>
-          <div className="col-xl-6">
+          <div className="col-lg-6">
             <nav className="header__menu">
               <ul>
                 {menus?.map((menu, menuKey) => (
@@ -134,7 +167,7 @@ const Header = () => {
               </ul>
             </nav>
           </div>
-          <div className="col-xl-3">
+          <div className="col-lg-3">
             <div className="header__cart">
               <div className="header__cart_price">
                 <span>{formatter(10232313)}</span>
@@ -147,6 +180,14 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div className="humberger__open">
+              <AiOutlineMenu
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  alert('ok')
+                }}
+              />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use 'style/pages/theme' as *;
+@use '../../../../style/pages/responsive' as *;
 
 $bannerImg: '/assets/user/images/hero/banner1.jpg';
 .header_top {
@@ -352,6 +353,26 @@ $bannerImg: '/assets/user/images/hero/banner1.jpg';
           letter-spacing: 2px;
         }
       }
+    }
+  }
+}
+
+@include Responsive($TABLET_DEVICE) {
+  .header_top,
+  .header__menu,
+  .header__cart {
+    display: none;
+  }
+
+  .humberger__open {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+
+    svg {
+      font-size: 30px;
+      color: map-get($map: $theme-color, $key: 'normal-text');
     }
   }
 }

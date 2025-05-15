@@ -64,7 +64,7 @@
   }
 
   .featured__item {
-    margin-bottom: 50px;
+    margin: 0 4px 50px;
 
     &:hover {
       .featured__item__pic__hover {
@@ -136,6 +136,10 @@
       }
     }
   }
+}
+
+.featured {
+  margin: 0 -4px;
 }
 
 .banner {
