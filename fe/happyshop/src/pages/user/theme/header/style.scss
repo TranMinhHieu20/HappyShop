@@ -356,6 +356,9 @@ $bannerImg: '/assets/user/images/hero/banner1.jpg';
     }
   }
 }
+.humberger__menu__wrapper {
+  display: none;
+}
 
 @include Responsive($TABLET_DEVICE) {
   .header_top,
@@ -407,6 +410,138 @@ $bannerImg: '/assets/user/images/hero/banner1.jpg';
 
     &.active {
       visibility: visible !important;
+    }
+  }
+  .humberger__menu__cart {
+    display: flex;
+    margin-bottom: 25px;
+    .header__cart__price {
+      font-size: 14px;
+      color: #6f6f6f;
+
+      span {
+        color: map-get($map: $theme-color, $key: 'bold-text');
+        font-weight: 700;
+      }
+    }
+    ul {
+      list-style: none;
+      display: inline-block;
+      margin-right: 15px;
+
+      li:last-child {
+        margin-right: 0;
+      }
+
+      li {
+        position: relative;
+
+        a {
+          font-size: 20px;
+          color: map-get($map: $theme-color, $key: 'normal-text');
+          text-decoration: none;
+          span {
+            position: absolute;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            background: map-get($map: $theme-color, $key: 'main');
+            border-radius: 50%;
+            top: -10px;
+            right: -10px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+  .humberger__menu__widget {
+    margin-bottom: 20px;
+    .header__top__right__auth a {
+      display: block;
+      font-size: 14px;
+      color: map-get($map: $theme-color, $key: 'normal-text');
+      text-decoration: none;
+    }
+  }
+  .humberger__menu__nav {
+    margin-bottom: 20px;
+
+    ul {
+      list-style: none;
+
+      li {
+        padding: 8px 0;
+        border-bottom: 1px solid #e1e1e1;
+
+        a {
+          text-decoration: none;
+          color: map-get($map: $theme-color, $key: 'normal-text');
+          font-size: 16px;
+          font-weight: 500;
+
+          svg {
+            vertical-align: middle;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    .header__menu__dropdown {
+      display: none;
+      padding: 5px 0;
+
+      li {
+        margin-left: 10px;
+        display: block;
+        margin-right: 0;
+
+        &:last-child {
+          border-bottom: unset;
+        }
+      }
+    }
+    .show__subMenu {
+      display: block;
+    }
+  }
+  .header__top__right__social {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 20px;
+
+    a {
+      font-size: 14px;
+      display: inline-block;
+      color: map-get($map: $theme-color, $key: 'normal-text');
+      margin-right: 15px;
+
+      svg {
+        font-size: 20px;
+      }
+    }
+  }
+  .humberger__menu__contact {
+    display: block;
+    font-size: 16px;
+
+    ul {
+      list-style: none;
+      color: map-get($map: $theme-color, $key: 'normal-text');
+
+      li {
+        display: flex;
+        align-items: center;
+        line-height: 25px;
+
+        svg {
+          margin-right: 5px;
+        }
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use 'theme' as *;
 @use 'responsive' as *;
+@use '@fontsource/be-vietnam' as *;
 
 html,
 body {
@@ -8,7 +9,8 @@ body {
 }
 
 * {
-  font-family: Roboto, sans-serif;
+  // font-family: Roboto, sans-serif;
+  font-family: 'Be VietNam Pro';
   padding: 0;
   margin: 0;
 }

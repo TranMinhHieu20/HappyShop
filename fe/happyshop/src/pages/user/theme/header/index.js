@@ -5,6 +5,7 @@ import { BsInstagram } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsGlobe2 } from 'react-icons/bs'
 import {
+  AiOutlineDownCircle,
   AiOutlineFacebook,
   AiOutlineGlobal,
   AiOutlineInstagram,
@@ -13,6 +14,7 @@ import {
   AiOutlineMenu,
   AiOutlinePhone,
   AiOutlineShoppingCart,
+  AiOutlineUpCircle,
   AiOutlineUser
 } from 'react-icons/ai'
 import { AiTwotoneMail } from 'react-icons/ai'
@@ -95,7 +97,7 @@ const Header = () => {
           </div>
         </div>
         <div className="humberger__menu__widget">
-          <div className="header__top__widget">
+          <div className="header__top__right__auth">
             {' '}
             <Link to={''}>
               <AiOutlineUser />
@@ -105,7 +107,30 @@ const Header = () => {
         </div>
         <div className="humberger__menu__nav">
           <ul>
-            <li>Menu Item</li>
+            {menus.map((menu, keyIndex) => (
+              <li key={keyIndex}>
+                <Link
+                  to={menu.path}
+                  onClick={() => {
+                    const newMenus = [...menus]
+                    newMenus[keyIndex].isShowSubmenu = !newMenus[keyIndex].isShowSubmenu
+                    setMenus(newMenus)
+                  }}
+                >
+                  {menu.name}
+                  {menu.child && (menu.isShowSubmenu ? <AiOutlineDownCircle /> : <AiOutlineUpCircle />)}
+                  {menu.child && (
+                    <ul className={`header__menu__dropdown ${menu.isShowSubmenu ? 'show__subMenu' : ''}`}>
+                      {menu?.child?.map((childItem, keyChildItem) => (
+                        <li key={`${keyChildItem}-${keyIndex}`}>
+                          <Link to={childItem.path}>{childItem.name}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="header__top__right__social">
@@ -126,9 +151,10 @@ const Header = () => {
           <ul>
             <li>
               <i className="fa fa-envelope" />
+              <AiTwotoneMail />
               tranhieu200304@gmail.com
             </li>
-            <li>Miễn phí giao hàng từ đơn {formatter(200000)} trở lên</li>
+            <li>Miễn phí giao hàng từ đơn {formatter(200000)}</li>
           </ul>
         </div>
       </div>
@@ -140,7 +166,7 @@ const Header = () => {
               <ul>
                 <li>
                   <AiTwotoneMail />
-                  hello@gmail.com
+                  tranhieu200304@gmail.com
                 </li>
                 <li>Miễn phí ship đơn từ {formatter(200000)}</li>
               </ul>

@@ -1239,6 +1239,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
+"@fontsource/be-vietnam@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/be-vietnam/-/be-vietnam-4.5.2.tgz#f3d49061df54a89270db543cbddfb2cf569529bd"
+  integrity sha512-SxgvlFy37KFfNbPLxRwE7mNQplmLQsWqzAp51jDdU0mif91rjnudSgVT+gJ30REIl1RsIe3NAiOCdwtqmep3xQ==
+
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.13.0.tgz#fb907624df3256d04b9aa2df50d7aa97ec648748"
