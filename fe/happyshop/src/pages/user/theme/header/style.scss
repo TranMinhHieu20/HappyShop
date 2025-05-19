@@ -359,6 +359,15 @@ $bannerImg: '/assets/user/images/hero/banner1.jpg';
 .humberger__menu__wrapper {
   display: none;
 }
+.humberger__open {
+  display: none;
+}
+
+@include Responsive($MEDIUM_DEVICE) {
+  .hero__search__form {
+    max-width: 530px !important;
+  }
+}
 
 @include Responsive($TABLET_DEVICE) {
   .header_top,
@@ -543,5 +552,12 @@ $bannerImg: '/assets/user/images/hero/banner1.jpg';
         }
       }
     }
+  }
+  .hero__search__form {
+    max-width: 563px;
+    padding-left: 0 !important;
+  }
+  .hero__item {
+    margin-left: 0 !important;
   }
 }

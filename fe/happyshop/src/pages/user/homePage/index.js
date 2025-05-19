@@ -42,6 +42,9 @@ const HomePage = () => {
     },
     {
       bgImg: cat4
+    },
+    {
+      bgImg: cat4
     }
   ]
   const featProducts = {
